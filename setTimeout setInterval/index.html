@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>async</title>
+</head>
+
+<body>
+
+
+    <button id="timeoutStop">Hazme click para abortar el proceso</button>
+
+
+    <script>
+
+
+
+        // setTimeout() recibe dos argumentos: función a invocar, y tiempo tras el que se invocará una única vez
+        const delayedAlert = setTimeout(() => alert('Han pasado tres segundos'), 3000)
+
+        // clearTimeout() aborta un timeout siempre que se haya almacenado en una variable
+        timeoutStop.onclick = () => {
+            clearTimeout(delayedAlert)
+            console.log('Temporizador abortado')
+        }
+
+
+
+
+
+
+
+
+
+
+
+        // setInterval() recibe dos argumentos: función a invocar, y tiempo de intervalo entre una invocación y la siguiente
+        const counterInt = setInterval(countMe, 1000)
+
+
+        let value = 0
+        const countMe = () => {
+            console.log(value)
+            value++
+        }
+
+        // clearInterval() aborta un intervalo siempre que se haya almacenado en una variable 
+        timeoutStop.onclick = () => clearInterval(counterInt)
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
